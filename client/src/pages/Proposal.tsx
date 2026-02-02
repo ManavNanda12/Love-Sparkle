@@ -104,7 +104,7 @@ export default function Proposal() {
             </motion.div>
 
             <h1 className="text-5xl md:text-7xl font-bold text-primary drop-shadow-sm mb-6 leading-tight">
-              Will you go out <br className="hidden md:block"/> with me?
+              Will you be my <br className="hidden md:block"/> valentine (Rinky 💖)?
             </h1>
             
             <p className="text-xl md:text-2xl text-muted-foreground font-handwriting mb-12 max-w-lg mx-auto leading-relaxed">
@@ -113,14 +113,20 @@ export default function Proposal() {
             </p>
 
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 relative h-32 md:h-auto">
-              <Button
+              {/* <Button
                 size="lg"
                 onClick={handleYes}
                 disabled={isPending}
                 className="px-10 py-8 text-2xl bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/30 hover:shadow-xl hover:-translate-y-1 transition-all rounded-2xl w-full md:w-auto min-w-[160px]"
               >
                 {isPending ? <Sparkles className="animate-spin mr-2" /> : "Yes! 💖"}
-              </Button>
+              </Button> */}
+
+              <div className="relative w-full md:w-auto flex justify-center h-16 md:h-auto items-center">
+                <RunawayButton onCatch={handleNoCaught}>
+                  Yes! 💖
+                </RunawayButton>
+              </div>
 
               <div className="relative w-full md:w-auto flex justify-center h-16 md:h-auto items-center">
                 <RunawayButton onCatch={handleNoCaught}>
