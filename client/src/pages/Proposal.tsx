@@ -74,7 +74,7 @@ export default function Proposal() {
   };
 
   const handleNoCaught = () => {
-    alert("Wow, you're fast! But... try the other button? 😉");
+    alert("Wow, Angareyyyyyy you're fast! But... try the other button? 😉");
   };
 
   return (
@@ -161,7 +161,7 @@ export default function Proposal() {
             </h1>
             
             <p className="text-2xl md:text-3xl text-primary font-medium mb-8">
-              You've made me the happiest person! 🥰
+              You've made me the happiest person Angareyyyyyyy! 🥰
             </p>
 
             <motion.div 
