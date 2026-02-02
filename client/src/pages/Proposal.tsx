@@ -73,9 +73,26 @@ export default function Proposal() {
     }
   };
 
+  const [noClickCount, setNoClickCount] = useState(0);
+  const [readyForAutoYes, setReadyForAutoYes] = useState(false);
+
   const handleNoCaught = () => {
-    alert("Wow, Angareyyyyyy you're fast! But... try the other button? 😉");
+    setNoClickCount((prev) => {
+      const next = prev + 1;
+      if (next >= 5) setReadyForAutoYes(true);
+      return next;
+    });
+    alert("Wow Angareyyyyy, you're fast! But... try the other button? 😉");
   };
+
+  const handleYesAuto = async () => {
+    if (readyForAutoYes) {
+      await handleYes();
+      setReadyForAutoYes(false);
+      setNoClickCount(0);
+    }
+  };
+
 
   return (
     <div className="min-h-screen w-full relative bg-gradient-to-br from-background via-white to-secondary overflow-hidden flex flex-col items-center justify-center p-4">
@@ -123,7 +140,7 @@ export default function Proposal() {
               </Button> */}
 
               <div className="relative w-full md:w-auto flex justify-center h-16 md:h-auto items-center">
-                <RunawayButton onCatch={handleNoCaught}>
+                <RunawayButton onCatch={readyForAutoYes ? handleYesAuto : undefined}>
                   Yes! 💖
                 </RunawayButton>
               </div>
@@ -161,7 +178,7 @@ export default function Proposal() {
             </h1>
             
             <p className="text-2xl md:text-3xl text-primary font-medium mb-8">
-              You've made me the happiest person Angareyyyyyyy! 🥰
+              You've made me the happiest person my cute little Angareyyyyy (Ab bana diyaa hee nikall 150000 rupya abhiiiiiii)! 🥰
             </p>
 
             <motion.div 
